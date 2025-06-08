@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capacitaciones - Bienestar Psicológico</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome para iconos -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --morado-claro: #B19CD9;
+            --amarillo: #FFD700;
+            --morado-suave: #F3E8FF;
+            --texto-oscuro: #2C3E50;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--texto-oscuro);
+            background: linear-gradient(135deg, var(--morado-suave) 0%, #ffffff 100%);
+            min-height: 100vh;
+            padding-top: 100px;
+            padding-bottom: 80px;
+        }
+
+        .navbar-custom {
+            background-color: var(--morado-claro) !important;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-brand {
+            font-weight: 600;
+            font-size: 1.5rem;
+        }
+
+        .content-container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            padding: 3rem;
+            margin: 2rem 0;
+        }
+
+        .page-title {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--texto-oscuro);
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .main-content {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+        }
+
+        .image-section {
+            flex: 1;
+        }
+
+        .capacitaciones-image {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .buttons-section {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .capacitacion-btn {
+            background: linear-gradient(135deg, var(--morado-claro), #9B7FB8);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            padding: 1.2rem 2rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            box-shadow: 0 4px 15px rgba(177, 156, 217, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .capacitacion-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(177, 156, 217, 0.4);
+            color: white;
+            text-decoration: none;
+        }
+
+        .capacitacion-btn.amarillo {
+            background: linear-gradient(135deg, var(--amarillo), #FFB800);
+            color: var(--texto-oscuro);
+        }
+
+        .capacitacion-btn.amarillo:hover {
+            color: var(--texto-oscuro);
+        }
+
+        .btn-number {
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+
+        .capacitacion-btn.amarillo .btn-number {
+            background: rgba(0, 0, 0, 0.1);
+            border-color: rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-text {
+            font-weight: 600;
+            font-size: 1rem;
+            text-align: left;
+        }
+
+        .btn-link {
+            font-size: 0.85rem;
+            opacity: 0.8;
+            font-style: italic;
+        }
+
+        .footer-custom {
+            background-color: var(--morado-claro);
+            color: white;
+            padding: 15px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .footer-custom a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+        }
+
+        .footer-custom a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+
+        @media (max-width: 992px) {
+            .main-content {
+                flex-direction: column;
+                gap: 2rem;
+            }
+            
+            .page-title {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .page-title {
+                font-size: 2rem;
+            }
+            
+            .content-container {
+                padding: 2rem 1rem;
+                margin: 1rem;
+            }
+
+            .capacitacion-btn {
+                padding: 1rem 1.5rem;
+                flex-direction: column;
+                text-align: center;
+                gap: 0.5rem;
+            }
+
+            .btn-text {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navegación -->
+    <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+        <div class="container">
+            <a class="navbar-brand text-white d-flex align-items-center" href="index.html">
+                <img src="images/LOGO_EMPRESA.png" alt="Bienestar Psicológico" height="60">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="encuestas.html">Encuestas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="contenido-interactivo.html">Contenido Interactivo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="espacios-apoyo.html">Espacios de Apoyo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="pausas-activas.html">Pausas Activas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white fw-bold" href="capacitaciones.html">Capacitaciones</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="content-container">
+            <h1 class="page-title">CAPACITACIONES</h1>
+            
+            <div class="main-content">
+                <!-- Imagen -->
+                <div class="image-section">
+                    <img src="images/CAPACITACIONES.avif" alt="Capacitaciones - Bienestar Psicológico" class="capacitaciones-image">
+                </div>
+
+                <!-- Botones de Capacitaciones -->
+                <div class="buttons-section">
+                    <a href="index.html" class="capacitacion-btn amarillo">
+                        <div class="btn-number">01</div>
+                        <div>
+                            <div class="btn-text">GESTIÓN DEL ESTRÉS EN AMBIENTES LABORALES</div>
+                            <div class="btn-link">link a Google Forms</div>
+                        </div>
+                    </a>
+
+                    <a href="index.html" class="capacitacion-btn">
+                        <div class="btn-number">02</div>
+                        <div>
+                            <div class="btn-text">INTELIGENCIA EMOCIONAL PARA EQUIPOS DE TRABAJO</div>
+                            <div class="btn-link">link a Google Forms</div>
+                        </div>
+                    </a>
+
+                    <a href="index.html" class="capacitacion-btn">
+                        <div class="btn-number">03</div>
+                        <div>
+                            <div class="btn-text">MANEJO DEL TIEMPO Y PRODUCTIVIDAD SALUDABLE</div>
+                            <div class="btn-link">link a Google Forms</div>
+                        </div>
+                    </a>
+
+                    <a href="index.html" class="capacitacion-btn amarillo">
+                        <div class="btn-number">04</div>
+                        <div>
+                            <div class="btn-text">LIDERAZGO EMPÁTICO Y BIENESTAR DEL EQUIPO</div>
+                            <div class="btn-link">link a Google Forms</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer-custom">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="text-white-50 mb-0">
+                        © 2025 Bienestar Psicológico. Todos los derechos reservados.
+                    </p>
+                </div>
+                <div class="col-md-6 text-end">
+                    <p class="text-white-50 mb-0">
+                        Línea de atención: 018002545 | 
+                        <a href="mailto:atencion@lineaatencion.com" class="text-white-50">atencion@lineaatencion.com</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html> 
